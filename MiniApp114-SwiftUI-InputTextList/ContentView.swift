@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    let fruits = ["リスト１", "リスト２", "リスト３"]
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                ForEach(0 ..< fruits.count) { index in
+                    Text(fruits[index])
+                }
+            }
         }
-        .padding()
     }
 }
 
